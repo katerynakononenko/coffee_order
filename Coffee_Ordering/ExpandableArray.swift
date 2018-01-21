@@ -13,7 +13,10 @@ struct ExpandableArray{
     var menuItems = [String]()
 }
 
-
+struct SectionAndItemsArray {
+    var title : String
+    var menuItems = [MenuItem]()
+}
 
 struct FirebaseExpandableArray {
     var isExpanded: Bool
