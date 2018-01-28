@@ -16,6 +16,7 @@ struct ExpandableArray{
 struct SectionAndItemsArray {
     var title : String
     var menuItems = [MenuItem]()
+    var isExpanded : Bool
 }
 
 struct FirebaseExpandableArray {

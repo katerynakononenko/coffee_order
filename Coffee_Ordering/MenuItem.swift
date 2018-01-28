@@ -19,10 +19,10 @@ class MenuItem {
     
     var snapshot: DocumentSnapshot?
     
-    var type : String?
-    var title : String?
-    var imageURL : URL?
-    var price : Float?
+    var type : String!
+    var title : String!
+    /*var imageURL : URL!*/
+    var price : Float!
     
     convenience init?(snapshot: DocumentSnapshot) {
         
@@ -40,10 +40,16 @@ class MenuItem {
         }
     }
     
+
+    
     init(json: JSON) {
         title = json["title"].string
         type = json["type"].string
         price = json["price"].float
-        imageURL = URL(string: json["imageURL"].stringValue)
+        /*imageURL = URL(string: json["imageURL"].stringValue)*/
     }
+    
+
+
+   
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
-class MenuTableViewController: UITableViewController {
+class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelegate {
 
     
     var firebaseMenu : [SectionAndItemsArray] = []
@@ -35,7 +35,7 @@ class MenuTableViewController: UITableViewController {
                             // If there is no type, then put the item into "Other" section
                             let type = item.type ?? "Other"
                             // Try to find an existing section of this type, if no such section exists, then create a new one
-                            var array : SectionAndItemsArray = sections[type] ?? SectionAndItemsArray(title: type, menuItems: [])
+                            var array : SectionAndItemsArray = sections[type] ?? SectionAndItemsArray(title: type, menuItems: [], isExpanded: true)
                             // Add an item to the items array of that section
                             
                             array.menuItems = array.menuItems + [item]
@@ -49,10 +49,6 @@ class MenuTableViewController: UITableViewController {
                     self.firebaseMenu = sections.flatMap({ (element: (key: String, value: SectionAndItemsArray)) -> SectionAndItemsArray? in
                         return element.value
                     })
-                    
-                    print("!!!!!!!!!!!!")
-                    print (sections)
-                    print("!!!!!!!!!!")
                     
                     self.firebaseMenu.sort(by: { (a: SectionAndItemsArray, b: SectionAndItemsArray) -> Bool in
                         return a.title.compare(b.title) == .orderedAscending
@@ -85,6 +81,7 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
         
         let foodArray = firebaseMenu[section]
+        
         return foodArray.menuItems[0].type
         
     }
@@ -95,6 +92,8 @@ class MenuTableViewController: UITableViewController {
         let foodArray = firebaseMenu[section]
         return foodArray.menuItems.count
     }
+    
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,5 +105,72 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
+    /*new addition*/
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (firebaseMenu[indexPath.section].isExpanded){
+            return 44
+        } else {
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = ExpandableHeaderView()
+        let foodArray = firebaseMenu[section]
+        let sectionName = foodArray.menuItems[0].type
+        header.myInit(title: sectionName!, section: section, delegate: self)
+        return header
+    }
+    
+    func touchSection(header: ExpandableHeaderView, section: Int){
+
+        firebaseMenu[section].isExpanded = !firebaseMenu[section].isExpanded
+        tableView.beginUpdates()
+        for row in 0 ..< firebaseMenu[section].menuItems.count{
+        tableView.reloadRows(at: [IndexPath(row: row, section: section )], with: .automatic)
+        }
+        tableView.endUpdates()
+    }
+    
+   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.item = firebaseMenu[indexPath.section].menuItems[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }*/
+    
+  
+
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        print(firebaseMenu[indexPath.section].menuItems[indexPath.row].title)
+       
+        performSegue(withIdentifier: "toDetailWeGo", sender: firebaseMenu[indexPath.section].menuItems[indexPath.row])
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailWeGo", let vc = segue.destination as? DetailViewController, let item = sender as? MenuItem {
+            vc.item = item
+        }
+    }
+    
+    
+
+
+    
+   /* func convertURLtoImg(urlAddress: URL)->UIImage{
+        let url = urlAddress
+        if let data = try? Data(contentsOf: url)
+        {
+            return UIImage(data:data)!
+        }
+        print("Bad iamge")
+        return nil
+    }*/
 
 }

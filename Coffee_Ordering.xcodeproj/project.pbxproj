@@ -19,6 +19,9 @@
 		1BA04A372013803A00EEEAB9 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA04A362013803A00EEEAB9 /* MenuItem.swift */; };
 		1BA1078D201393570022B523 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA1078C201393570022B523 /* MenuItemTableViewCell.swift */; };
 		1BA107CB2013EA390022B523 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA107CA2013EA390022B523 /* MenuTableViewController.swift */; };
+		1BA107CD201545500022B523 /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA107CC201545500022B523 /* ExpandableHeaderView.swift */; };
+		1BA107CF201A26FC0022B523 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA107CE201A26FC0022B523 /* DetailViewController.swift */; };
+		1BE8CA97201E312A00A31233 /* ShoppingBagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CA96201E312A00A31233 /* ShoppingBagTableViewController.swift */; };
 		2FD5E93066C972F79E5C1A78 /* Pods_Coffee_Ordering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDADD09ACA53310440FE748 /* Pods_Coffee_Ordering.framework */; };
 		A856621E40D567B14DA77EFF /* Pods_Coffee_OrderingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C329BCA4BE21A309C8643 /* Pods_Coffee_OrderingUITests.framework */; };
 		ADB94F31C291DFB623305AFF /* Pods_Coffee_OrderingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F21BE9EC840485D6C79B779 /* Pods_Coffee_OrderingTests.framework */; };
@@ -60,6 +63,9 @@
 		1BA04A362013803A00EEEAB9 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		1BA1078C201393570022B523 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		1BA107CA2013EA390022B523 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		1BA107CC201545500022B523 /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
+		1BA107CE201A26FC0022B523 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1BE8CA96201E312A00A31233 /* ShoppingBagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingBagTableViewController.swift; sourceTree = "<group>"; };
 		1F21BE9EC840485D6C79B779 /* Pods_Coffee_OrderingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_OrderingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25FBE3BFFFBF71395EBBE48F /* Pods-Coffee_OrderingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee_OrderingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee_OrderingUITests/Pods-Coffee_OrderingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		549EACC93B8D0A5C269587E7 /* Pods-Coffee_OrderingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee_OrderingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee_OrderingTests/Pods-Coffee_OrderingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 				1BA04A3220137EBF00EEEAB9 /* GoogleService-Info.plist */,
 				1B00251C20102F5E00627FB8 /* AppDelegate.swift */,
 				1B00251E20102F5E00627FB8 /* ViewController.swift */,
+				1BA107CE201A26FC0022B523 /* DetailViewController.swift */,
+				1BE8CA96201E312A00A31233 /* ShoppingBagTableViewController.swift */,
 				1BA107CA2013EA390022B523 /* MenuTableViewController.swift */,
 				1BA1078C201393570022B523 /* MenuItemTableViewCell.swift */,
 				1B0025502010469D00627FB8 /* ExpandableArray.swift */,
@@ -135,6 +143,7 @@
 				1B00252520102F5E00627FB8 /* LaunchScreen.storyboard */,
 				1B00252820102F5E00627FB8 /* Info.plist */,
 				1BA04A362013803A00EEEAB9 /* MenuItem.swift */,
+				1BA107CC201545500022B523 /* ExpandableHeaderView.swift */,
 			);
 			path = Coffee_Ordering;
 			sourceTree = "<group>";
@@ -498,11 +507,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B00251F20102F5E00627FB8 /* ViewController.swift in Sources */,
+				1BA107CD201545500022B523 /* ExpandableHeaderView.swift in Sources */,
 				1B00251D20102F5E00627FB8 /* AppDelegate.swift in Sources */,
 				1BA107CB2013EA390022B523 /* MenuTableViewController.swift in Sources */,
+				1BE8CA97201E312A00A31233 /* ShoppingBagTableViewController.swift in Sources */,
 				1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */,
 				1BA04A372013803A00EEEAB9 /* MenuItem.swift in Sources */,
 				1BA1078D201393570022B523 /* MenuItemTableViewCell.swift in Sources */,
+				1BA107CF201A26FC0022B523 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
