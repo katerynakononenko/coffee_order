@@ -49,7 +49,25 @@ class MenuItem {
         /*imageURL = URL(string: json["imageURL"].stringValue)*/
     }
     
-
+    var json : [String : Any] {
+        var json = [String : Any]()
+        json["type"] = type
+        json["title"] = title
+        json["price"] = price
+        return json
+    }
+    
+    static var shopingCartReference : CollectionReference {
+        return Firestore.firestore().collection("shoppingCart")
+    }
+    
+    func addToShoppingCart() {
+        MenuItem.shopingCartReference.addDocument(data: json)
+    }
+    
+    func delete() {
+        snapshot?.reference.delete()
+    }
 
    
 }

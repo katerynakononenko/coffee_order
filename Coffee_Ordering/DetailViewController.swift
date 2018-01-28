@@ -15,9 +15,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     
     
-  /*  @IBAction func goToCart(_ sender: Any) {
-        performSegue(withIdentifier: "goToCart", sender: <#T##Any?#>)
-    }*/
+    @IBAction func goToCart(_ sender: Any) {
+        performSegue(withIdentifier: "goToCart", sender: nil)
+    }
     
     
     override func viewDidLoad() {
@@ -25,25 +25,25 @@ class DetailViewController: UIViewController {
         
         name.text = item.title
     }
+    
+    
+    @IBAction func addToCartTapped(_ sender: Any) {
+        item.addToShoppingCart()
+        
+        UIAlertController.presentOKAlert(from: self, title: item.title, message: "Item was successfully added to the shopping cart.")
+        
+    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension UIAlertController {
+    
+    static func presentOKAlert(from vc: UIViewController, title: String, message: String, okHandler: (()->Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            okHandler?()
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
     
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-
 }
