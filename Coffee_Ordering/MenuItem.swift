@@ -21,7 +21,7 @@ class MenuItem {
     
     var type : String!
     var title : String!
-    /*var imageURL : URL!*/
+    var imageURL : URL!
     var price : Float!
     
     convenience init?(snapshot: DocumentSnapshot) {
@@ -46,7 +46,7 @@ class MenuItem {
         title = json["title"].string
         type = json["type"].string
         price = json["price"].float
-        /*imageURL = URL(string: json["imageURL"].stringValue)*/
+        imageURL = URL(string: json["imageURL"].stringValue)
     }
     
     var json : [String : Any] {
@@ -54,6 +54,7 @@ class MenuItem {
         json["type"] = type
         json["title"] = title
         json["price"] = price
+        json["imageURL"] = imageURL
         return json
     }
     

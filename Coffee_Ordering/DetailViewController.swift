@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     var item: MenuItem!
     
+    @IBOutlet weak var itemImg: UIImageView!
 
     @IBOutlet weak var name: UILabel!
     
@@ -24,6 +25,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         name.text = item.title
+        if (item.title == "Veggie"){
+            itemImg.downloadedFrom(url: item.imageURL)
+        }
+        
+        
     }
     
     
@@ -47,3 +53,26 @@ extension UIAlertController {
     }
     
 }
+
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
+    }
+}
+
+

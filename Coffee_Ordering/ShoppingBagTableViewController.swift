@@ -11,10 +11,12 @@ import FirebaseFirestore
 
 
 class ShoppingBagTableViewController: UITableViewController {
-    
+  
+ 
     
     var menuItems : [MenuItem] = []
     var listenerRegistration : ListenerRegistration?
+    var subtotal: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +38,12 @@ class ShoppingBagTableViewController: UITableViewController {
                     }
                     
                     self?.tableView.reloadData()
+                  
                 }
             }
             
         }
+      
         
     }
     
@@ -51,25 +55,54 @@ class ShoppingBagTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
+        
+        return menuItems.count + 2
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == menuItems.count {
+            return 100
+        } else {
+            return 44
+        }
     }
     
     
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       if indexPath.row == menuItems.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCartTableViewCell", for: indexPath) as! TotalCartTableViewCell
+            for it in menuItems {
+                subtotal += it.price
+                print(subtotal)
+            }
+            cell.subtotalValue.text = String(subtotal)
+            cell.taxValue.text = String(subtotal*0.1)
+            cell.totValue.text = String(subtotal*1.1)
+            return cell
+         } else if indexPath.row == menuItems.count + 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckOutTableViewCell", for: indexPath) as! CheckOutTableViewCell
+        
+            return cell
+       }else {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuItemTableViewCell
-        let item = menuItems[indexPath.row]
-        cell.name?.text = item.title
-        let str_price = item.price?.description
-        cell.price?.text = str_price
-        return cell
+         let item = menuItems[indexPath.row]
+         cell.name.text = item.title
+         let str_price = item.price.description
+         cell.price?.text = str_price
+         return cell
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
         
+        
+        if (indexPath.row >= menuItems.count){
+            return
+        }
         let item = menuItems[indexPath.row]
         print(item.title)
         
@@ -89,6 +122,7 @@ class ShoppingBagTableViewController: UITableViewController {
                 if let item = self?.menuItems[indexPath.row] {
                     item.delete()
                 }
+                
             })
         ]
     }

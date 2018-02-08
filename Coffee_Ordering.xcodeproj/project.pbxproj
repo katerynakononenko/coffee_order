@@ -15,6 +15,8 @@
 		1B00253220102F5E00627FB8 /* Coffee_OrderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00253120102F5E00627FB8 /* Coffee_OrderingTests.swift */; };
 		1B00253D20102F5E00627FB8 /* Coffee_OrderingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00253C20102F5E00627FB8 /* Coffee_OrderingUITests.swift */; };
 		1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0025502010469D00627FB8 /* ExpandableArray.swift */; };
+		1B4D78942020CF1A00A8490F /* CheckOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */; };
+		1B4D78962020CF3000A8490F /* TotalCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */; };
 		1BA04A3320137EBF00EEEAB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA04A3220137EBF00EEEAB9 /* GoogleService-Info.plist */; };
 		1BA04A372013803A00EEEAB9 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA04A362013803A00EEEAB9 /* MenuItem.swift */; };
 		1BA1078D201393570022B523 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA1078C201393570022B523 /* MenuItemTableViewCell.swift */; };
@@ -59,6 +61,8 @@
 		1B00253C20102F5E00627FB8 /* Coffee_OrderingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_OrderingUITests.swift; sourceTree = "<group>"; };
 		1B00253E20102F5E00627FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0025502010469D00627FB8 /* ExpandableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableArray.swift; sourceTree = "<group>"; };
+		1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutTableViewCell.swift; sourceTree = "<group>"; };
+		1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCartTableViewCell.swift; sourceTree = "<group>"; };
 		1BA04A3220137EBF00EEEAB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BA04A362013803A00EEEAB9 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		1BA1078C201393570022B523 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				1B00251E20102F5E00627FB8 /* ViewController.swift */,
 				1BA107CE201A26FC0022B523 /* DetailViewController.swift */,
 				1BE8CA96201E312A00A31233 /* ShoppingBagTableViewController.swift */,
+				1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */,
+				1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */,
 				1BA107CA2013EA390022B523 /* MenuTableViewController.swift */,
 				1BA1078C201393570022B523 /* MenuItemTableViewCell.swift */,
 				1B0025502010469D00627FB8 /* ExpandableArray.swift */,
@@ -511,10 +517,12 @@
 				1B00251D20102F5E00627FB8 /* AppDelegate.swift in Sources */,
 				1BA107CB2013EA390022B523 /* MenuTableViewController.swift in Sources */,
 				1BE8CA97201E312A00A31233 /* ShoppingBagTableViewController.swift in Sources */,
+				1B4D78962020CF3000A8490F /* TotalCartTableViewCell.swift in Sources */,
 				1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */,
 				1BA04A372013803A00EEEAB9 /* MenuItem.swift in Sources */,
 				1BA1078D201393570022B523 /* MenuItemTableViewCell.swift in Sources */,
 				1BA107CF201A26FC0022B523 /* DetailViewController.swift in Sources */,
+				1B4D78942020CF1A00A8490F /* CheckOutTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
