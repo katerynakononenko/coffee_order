@@ -16,10 +16,28 @@ class ShoppingBagTableViewController: UITableViewController {
     
     var menuItems : [MenuItem] = []
     var listenerRegistration : ListenerRegistration?
+    var orderRef: CollectionReference!
     var subtotal: Float = 0.0
+    var curOrder : [MenuItem] = []
+
+    @IBAction func checkOutBtn(_ sender: Any) {
+        
+        let timestamp = Date().timeIntervalSince1970
+        for item in menuItems{
+            item.orderTimestamp = timestamp
+            item.addToCurrentOrder()
+        }
+        
+         UIAlertController.presentOKAlert(from: self, title: "Thank you :)", message: "Your order was sent over!")
+        menuItems.removeAll()
+        tableView.reloadData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        orderRef = Firestore.firestore().collection("currentOrder")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
         
         
@@ -73,7 +91,8 @@ class ShoppingBagTableViewController: UITableViewController {
         
        if indexPath.row == menuItems.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCartTableViewCell", for: indexPath) as! TotalCartTableViewCell
-            for it in menuItems {
+        subtotal = 0
+        for it in menuItems {
                 subtotal += it.price
                 print(subtotal)
             }
@@ -120,10 +139,24 @@ class ShoppingBagTableViewController: UITableViewController {
             UITableViewRowAction(style: .destructive, title: "Remove from Shopping Cart", handler: { [weak self] (action: UITableViewRowAction, indexPath: IndexPath) in
                 
                 if let item = self?.menuItems[indexPath.row] {
+                    self?.subtotal -= item.price
                     item.delete()
                 }
                 
+
             })
         ]
     }
+}
+
+extension UIAlertController {
+    
+    static func presentOrderPlacedAlert(from vc: UITableViewController, title: String, message: String, okHandler: (()->Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            okHandler?()
+        }))
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
 }

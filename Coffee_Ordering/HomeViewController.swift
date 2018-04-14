@@ -10,12 +10,23 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+  
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
+   
+    @IBOutlet var screenView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+    
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "home")
+        screenView.insertSubview(backgroundImage, at: 0)
         // Do any additional setup after loading the view.
     }
 
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

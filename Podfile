@@ -8,6 +8,7 @@ target 'Coffee_Ordering' do
   pod 'FirebaseCore'
   pod 'FirebaseFirestore'
   pod 'SwiftyJSON'
+pod 'Stripe'
 
   # Pods for Coffee_Ordering
 

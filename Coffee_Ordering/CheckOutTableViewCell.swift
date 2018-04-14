@@ -11,6 +11,7 @@ import UIKit
 class CheckOutTableViewCell: UITableViewCell {
 
     @IBAction func checkOut(_ sender: Any) {
+        
         print("Click")
     }
     override func awakeFromNib() {

@@ -15,17 +15,28 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var name: UILabel!
     
+    @IBOutlet weak var itemPrice: UILabel!
+    
+    @IBOutlet weak var specialInstructions: UITextField!
+    
+
     
     @IBAction func goToCart(_ sender: Any) {
         performSegue(withIdentifier: "goToCart", sender: nil)
     }
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         name.text = item.title
-        if (item.title == "Veggie"){
+       
+        itemPrice.text = String(item.price)
+        if (item.imageURL != nil){
+            print(item.imageURL)
             itemImg.downloadedFrom(url: item.imageURL)
         }
         
@@ -35,6 +46,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func addToCartTapped(_ sender: Any) {
         item.addToShoppingCart()
+        
         
         UIAlertController.presentOKAlert(from: self, title: item.title, message: "Item was successfully added to the shopping cart.")
         

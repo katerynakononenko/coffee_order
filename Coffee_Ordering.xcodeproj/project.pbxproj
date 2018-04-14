@@ -15,6 +15,11 @@
 		1B00253220102F5E00627FB8 /* Coffee_OrderingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00253120102F5E00627FB8 /* Coffee_OrderingTests.swift */; };
 		1B00253D20102F5E00627FB8 /* Coffee_OrderingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B00253C20102F5E00627FB8 /* Coffee_OrderingUITests.swift */; };
 		1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0025502010469D00627FB8 /* ExpandableArray.swift */; };
+		1B194DEE204B2E6E004A0485 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B194DED204B2E6E004A0485 /* OrderItem.swift */; };
+		1B194DF0204B2FBB004A0485 /* DrinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B194DEF204B2FBB004A0485 /* DrinkItem.swift */; };
+		1B1E10D6207D0ABF006FB0B2 /* CheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10D5207D0ABF006FB0B2 /* CheckoutTableViewController.swift */; };
+		1B1E10D8207EE721006FB0B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10D7207EE721006FB0B2 /* HomeViewController.swift */; };
+		1B3B8CE8206A79B400EED189 /* DrinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3B8CE7206A79B400EED189 /* DrinkDetailViewController.swift */; };
 		1B4D78942020CF1A00A8490F /* CheckOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */; };
 		1B4D78962020CF3000A8490F /* TotalCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */; };
 		1BA04A3320137EBF00EEEAB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BA04A3220137EBF00EEEAB9 /* GoogleService-Info.plist */; };
@@ -61,6 +66,11 @@
 		1B00253C20102F5E00627FB8 /* Coffee_OrderingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_OrderingUITests.swift; sourceTree = "<group>"; };
 		1B00253E20102F5E00627FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0025502010469D00627FB8 /* ExpandableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableArray.swift; sourceTree = "<group>"; };
+		1B194DED204B2E6E004A0485 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		1B194DEF204B2FBB004A0485 /* DrinkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkItem.swift; sourceTree = "<group>"; };
+		1B1E10D5207D0ABF006FB0B2 /* CheckoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewController.swift; sourceTree = "<group>"; };
+		1B1E10D7207EE721006FB0B2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1B3B8CE7206A79B400EED189 /* DrinkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewController.swift; sourceTree = "<group>"; };
 		1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutTableViewCell.swift; sourceTree = "<group>"; };
 		1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCartTableViewCell.swift; sourceTree = "<group>"; };
 		1BA04A3220137EBF00EEEAB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -112,6 +122,7 @@
 		1B00251020102F5E00627FB8 = {
 			isa = PBXGroup;
 			children = (
+				1B1E10D7207EE721006FB0B2 /* HomeViewController.swift */,
 				1B00251B20102F5E00627FB8 /* Coffee_Ordering */,
 				1B00253020102F5E00627FB8 /* Coffee_OrderingTests */,
 				1B00253B20102F5E00627FB8 /* Coffee_OrderingUITests */,
@@ -138,6 +149,8 @@
 				1B00251C20102F5E00627FB8 /* AppDelegate.swift */,
 				1B00251E20102F5E00627FB8 /* ViewController.swift */,
 				1BA107CE201A26FC0022B523 /* DetailViewController.swift */,
+				1B1E10D5207D0ABF006FB0B2 /* CheckoutTableViewController.swift */,
+				1B3B8CE7206A79B400EED189 /* DrinkDetailViewController.swift */,
 				1BE8CA96201E312A00A31233 /* ShoppingBagTableViewController.swift */,
 				1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */,
 				1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */,
@@ -150,6 +163,8 @@
 				1B00252820102F5E00627FB8 /* Info.plist */,
 				1BA04A362013803A00EEEAB9 /* MenuItem.swift */,
 				1BA107CC201545500022B523 /* ExpandableHeaderView.swift */,
+				1B194DED204B2E6E004A0485 /* OrderItem.swift */,
+				1B194DEF204B2FBB004A0485 /* DrinkItem.swift */,
 			);
 			path = Coffee_Ordering;
 			sourceTree = "<group>";
@@ -272,6 +287,7 @@
 				TargetAttributes = {
 					1B00251820102F5E00627FB8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					1B00252C20102F5E00627FB8 = {
@@ -398,6 +414,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -411,6 +428,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -516,12 +534,17 @@
 				1BA107CD201545500022B523 /* ExpandableHeaderView.swift in Sources */,
 				1B00251D20102F5E00627FB8 /* AppDelegate.swift in Sources */,
 				1BA107CB2013EA390022B523 /* MenuTableViewController.swift in Sources */,
+				1B3B8CE8206A79B400EED189 /* DrinkDetailViewController.swift in Sources */,
 				1BE8CA97201E312A00A31233 /* ShoppingBagTableViewController.swift in Sources */,
 				1B4D78962020CF3000A8490F /* TotalCartTableViewCell.swift in Sources */,
 				1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */,
+				1B1E10D6207D0ABF006FB0B2 /* CheckoutTableViewController.swift in Sources */,
 				1BA04A372013803A00EEEAB9 /* MenuItem.swift in Sources */,
 				1BA1078D201393570022B523 /* MenuItemTableViewCell.swift in Sources */,
+				1B1E10D8207EE721006FB0B2 /* HomeViewController.swift in Sources */,
+				1B194DEE204B2E6E004A0485 /* OrderItem.swift in Sources */,
 				1BA107CF201A26FC0022B523 /* DetailViewController.swift in Sources */,
+				1B194DF0204B2FBB004A0485 /* DrinkItem.swift in Sources */,
 				1B4D78942020CF1A00A8490F /* CheckOutTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,10 +696,13 @@
 			baseConfigurationReference = 80014640018B9572C150F17B /* Pods-Coffee_Ordering.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coffee_Ordering/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Coffee-Ordering";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coffee_Ordering/Coffee_Ordering-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -686,10 +712,12 @@
 			baseConfigurationReference = EE5C78BDD44E3E565ABA326F /* Pods-Coffee_Ordering.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Coffee_Ordering/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Coffee-Ordering";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coffee_Ordering/Coffee_Ordering-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

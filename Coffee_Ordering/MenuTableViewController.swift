@@ -16,11 +16,6 @@ class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         let query = Firestore.firestore().collection("menuItems")
         listenerRegistration = query.addSnapshotListener { (snapshot: QuerySnapshot?, error: Error?) in
             
@@ -149,14 +144,44 @@ class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelega
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
         print(firebaseMenu[indexPath.section].menuItems[indexPath.row].title)
-       
-        performSegue(withIdentifier: "toDetailWeGo", sender: firebaseMenu[indexPath.section].menuItems[indexPath.row])
+    var id: String!
+        if (firebaseMenu[indexPath.section].menuItems[indexPath.row].type == "Coffee & Tea"){
+            id = "toDrinkDetail"
+        }else{
+            id = "toDetailWeGo"
+        }
+    performSegue(withIdentifier: id, sender: firebaseMenu[indexPath.section].menuItems[indexPath.row])
+  
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailWeGo", let vc = segue.destination as? DetailViewController, let item = sender as? MenuItem {
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toDetailWeGo"
+    {
+        if let destinationVC = segue.destination as? DetailViewController {
+            if let item = sender as! MenuItem! {
+                destinationVC.item = item
+                print(item)
+            }
+        }
+    } else if segue.identifier == "toDrinkDetail"
+    {
+        if let destinationVC = segue.destination as? DrinkDetailViewController {
+            
+            if let item = sender as! MenuItem! {
+                destinationVC.item = item
+                print(item)
+            }
+        }
+    }
+    }
+
+ /*   if segue.identifier == "toDetailWeGo", let vc = segue.destination as? DetailViewController, let item = sender as? MenuItem {
+            vc.item = item
+        }else if segue.identifier == "toDrinkDetail", let vc = segue.destination as? DrinkDetailViewController, let item = sender as? MenuItem! {
+        if let item = item {
             vc.item = item
         }
+        }*/
     }
     
     
@@ -173,4 +198,3 @@ class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelega
         return nil
     }*/
 
-}

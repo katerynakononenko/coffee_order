@@ -54,12 +54,14 @@ PODS:
   - Realm/Headers (3.1.0)
   - RealmSwift (3.1.0):
     - Realm (= 3.1.0)
+  - Stripe (12.0.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - FirebaseCore
   - FirebaseFirestore
   - RealmSwift
+  - Stripe
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -78,8 +80,9 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
   RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
+  Stripe: c1c4828adf3e078fb08ff56cd93f410c54011c54
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 1eb7ec7fe623e2ebd12b27303fa7115c611afb14
+PODFILE CHECKSUM: 8809414d38e25618b1a00fb4fc81cd8aa220e545
 
 COCOAPODS: 1.4.0

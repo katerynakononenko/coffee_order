@@ -23,6 +23,10 @@ class MenuItem {
     var title : String!
     var imageURL : URL!
     var price : Float!
+
+    var orderTimestamp: TimeInterval?
+    var orderSize: String?
+    var notes : String?
     
     convenience init?(snapshot: DocumentSnapshot) {
         
@@ -47,6 +51,9 @@ class MenuItem {
         type = json["type"].string
         price = json["price"].float
         imageURL = URL(string: json["imageURL"].stringValue)
+        orderTimestamp = json["orderTimestamp"].double
+        orderSize = json["orderSize"].string
+        notes = json["notes"].string
     }
     
     var json : [String : Any] {
@@ -55,16 +62,34 @@ class MenuItem {
         json["title"] = title
         json["price"] = price
         json["imageURL"] = imageURL
+        if let orderSize = orderSize {
+            json["orderSize"] = orderSize
+        }
+        if let orderTimestamp = orderTimestamp {
+            json["orderTimestamp"] = orderTimestamp
+        }
+        
+        if let notes = notes {
+            json["notes"] = notes
+        }
         return json
     }
     
     static var shopingCartReference : CollectionReference {
         return Firestore.firestore().collection("shoppingCart")
     }
+    static var curOrderCartReference : CollectionReference {
+        return Firestore.firestore().collection("currentOrder")
+    }
     
     func addToShoppingCart() {
         MenuItem.shopingCartReference.addDocument(data: json)
     }
+    
+    func addToCurrentOrder() {
+        MenuItem.curOrderCartReference.addDocument(data: json)
+    }
+    
     
     func delete() {
         snapshot?.reference.delete()
