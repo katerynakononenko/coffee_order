@@ -11,12 +11,15 @@ import UIKit
 class MenuItemTableViewCell: UITableViewCell {
 
     var img: UIImageView!
+   
 
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var name: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+     
         // Initialization code
     }
 

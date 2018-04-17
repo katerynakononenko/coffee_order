@@ -21,12 +21,14 @@ class MenuItem {
     
     var type : String!
     var title : String!
-    var imageURL : URL!
+    
     var price : Float!
 
     var orderTimestamp: TimeInterval?
+    var imageURL : URL?
     var orderSize: String?
     var notes : String?
+    var orderName : String?
     
     convenience init?(snapshot: DocumentSnapshot) {
         
@@ -44,8 +46,15 @@ class MenuItem {
         }
     }
     
+    init (title: String!, type: String!, price: Float!, orderSize: String!, notes : String!) {
+        self.title = title
+        self.type = type
+        self.price = price
+        self.orderSize = orderSize
+        self.notes = notes
+    }
 
-    
+
     init(json: JSON) {
         title = json["title"].string
         type = json["type"].string
@@ -61,7 +70,9 @@ class MenuItem {
         json["type"] = type
         json["title"] = title
         json["price"] = price
-        json["imageURL"] = imageURL
+        if let imageURL = imageURL{
+            json["imageURL"] = imageURL
+        }
         if let orderSize = orderSize {
             json["orderSize"] = orderSize
         }
@@ -71,6 +82,9 @@ class MenuItem {
         
         if let notes = notes {
             json["notes"] = notes
+        }
+        if let orderName = orderName {
+            json["orderName"] = orderName
         }
         return json
     }

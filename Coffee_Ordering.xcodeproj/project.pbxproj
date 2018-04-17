@@ -17,8 +17,10 @@
 		1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0025502010469D00627FB8 /* ExpandableArray.swift */; };
 		1B194DEE204B2E6E004A0485 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B194DED204B2E6E004A0485 /* OrderItem.swift */; };
 		1B194DF0204B2FBB004A0485 /* DrinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B194DEF204B2FBB004A0485 /* DrinkItem.swift */; };
-		1B1E10D6207D0ABF006FB0B2 /* CheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10D5207D0ABF006FB0B2 /* CheckoutTableViewController.swift */; };
 		1B1E10D8207EE721006FB0B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10D7207EE721006FB0B2 /* HomeViewController.swift */; };
+		1B1E10DC2084CCA7006FB0B2 /* sizeGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10DB2084CCA7006FB0B2 /* sizeGuide.swift */; };
+		1B1E10E0208576BF006FB0B2 /* headerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10DF208576BF006FB0B2 /* headerTableViewCell.swift */; };
+		1B1E10E220857A80006FB0B2 /* nameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E10E120857A80006FB0B2 /* nameTableViewCell.swift */; };
 		1B3B8CE8206A79B400EED189 /* DrinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3B8CE7206A79B400EED189 /* DrinkDetailViewController.swift */; };
 		1B4D78942020CF1A00A8490F /* CheckOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */; };
 		1B4D78962020CF3000A8490F /* TotalCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */; };
@@ -68,8 +70,10 @@
 		1B0025502010469D00627FB8 /* ExpandableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableArray.swift; sourceTree = "<group>"; };
 		1B194DED204B2E6E004A0485 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		1B194DEF204B2FBB004A0485 /* DrinkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkItem.swift; sourceTree = "<group>"; };
-		1B1E10D5207D0ABF006FB0B2 /* CheckoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutTableViewController.swift; sourceTree = "<group>"; };
 		1B1E10D7207EE721006FB0B2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1B1E10DB2084CCA7006FB0B2 /* sizeGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sizeGuide.swift; sourceTree = "<group>"; };
+		1B1E10DF208576BF006FB0B2 /* headerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerTableViewCell.swift; sourceTree = "<group>"; };
+		1B1E10E120857A80006FB0B2 /* nameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nameTableViewCell.swift; sourceTree = "<group>"; };
 		1B3B8CE7206A79B400EED189 /* DrinkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewController.swift; sourceTree = "<group>"; };
 		1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutTableViewCell.swift; sourceTree = "<group>"; };
 		1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCartTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,11 +151,12 @@
 			children = (
 				1BA04A3220137EBF00EEEAB9 /* GoogleService-Info.plist */,
 				1B00251C20102F5E00627FB8 /* AppDelegate.swift */,
+				1B1E10DF208576BF006FB0B2 /* headerTableViewCell.swift */,
 				1B00251E20102F5E00627FB8 /* ViewController.swift */,
 				1BA107CE201A26FC0022B523 /* DetailViewController.swift */,
-				1B1E10D5207D0ABF006FB0B2 /* CheckoutTableViewController.swift */,
 				1B3B8CE7206A79B400EED189 /* DrinkDetailViewController.swift */,
 				1BE8CA96201E312A00A31233 /* ShoppingBagTableViewController.swift */,
+				1B1E10E120857A80006FB0B2 /* nameTableViewCell.swift */,
 				1B4D78932020CF1A00A8490F /* CheckOutTableViewCell.swift */,
 				1B4D78952020CF3000A8490F /* TotalCartTableViewCell.swift */,
 				1BA107CA2013EA390022B523 /* MenuTableViewController.swift */,
@@ -165,6 +170,7 @@
 				1BA107CC201545500022B523 /* ExpandableHeaderView.swift */,
 				1B194DED204B2E6E004A0485 /* OrderItem.swift */,
 				1B194DEF204B2FBB004A0485 /* DrinkItem.swift */,
+				1B1E10DB2084CCA7006FB0B2 /* sizeGuide.swift */,
 			);
 			path = Coffee_Ordering;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				TargetAttributes = {
 					1B00251820102F5E00627FB8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4R3A677WS4;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -414,7 +421,6 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -428,7 +434,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -530,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1E10E0208576BF006FB0B2 /* headerTableViewCell.swift in Sources */,
 				1B00251F20102F5E00627FB8 /* ViewController.swift in Sources */,
 				1BA107CD201545500022B523 /* ExpandableHeaderView.swift in Sources */,
 				1B00251D20102F5E00627FB8 /* AppDelegate.swift in Sources */,
@@ -537,8 +543,9 @@
 				1B3B8CE8206A79B400EED189 /* DrinkDetailViewController.swift in Sources */,
 				1BE8CA97201E312A00A31233 /* ShoppingBagTableViewController.swift in Sources */,
 				1B4D78962020CF3000A8490F /* TotalCartTableViewCell.swift in Sources */,
+				1B1E10E220857A80006FB0B2 /* nameTableViewCell.swift in Sources */,
+				1B1E10DC2084CCA7006FB0B2 /* sizeGuide.swift in Sources */,
 				1B0025512010469D00627FB8 /* ExpandableArray.swift in Sources */,
-				1B1E10D6207D0ABF006FB0B2 /* CheckoutTableViewController.swift in Sources */,
 				1BA04A372013803A00EEEAB9 /* MenuItem.swift in Sources */,
 				1BA1078D201393570022B523 /* MenuItemTableViewCell.swift in Sources */,
 				1B1E10D8207EE721006FB0B2 /* HomeViewController.swift in Sources */,
@@ -697,6 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4R3A677WS4;
 				INFOPLIST_FILE = Coffee_Ordering/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Coffee-Ordering";
@@ -713,6 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4R3A677WS4;
 				INFOPLIST_FILE = Coffee_Ordering/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Coffee-Ordering";

@@ -26,7 +26,14 @@ class DetailViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var addToOrderBtn: UIButton!
     
+    @IBAction func addToCartAction(_ sender: Any) {
+        let curItem = MenuItem(title: item.title, type: item.type, price: item.price, orderSize: "na", notes : specialInstructions.text)
+        
+        curItem.addToShoppingCart()
+        UIAlertController.presentGoodAlert(from: self, title: item.title, message: "Item was successfully added to the shopping cart.")
+    }
     
     
     override func viewDidLoad() {
@@ -36,8 +43,8 @@ class DetailViewController: UIViewController {
        
         itemPrice.text = String(item.price)
         if (item.imageURL != nil){
-            print(item.imageURL)
-            itemImg.downloadedFrom(url: item.imageURL)
+            print(item.imageURL!)
+            itemImg.downloadedFromD(url: item.imageURL!)
         }
         
         
@@ -45,10 +52,10 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func addToCartTapped(_ sender: Any) {
-        item.addToShoppingCart()
-        
-        
-        UIAlertController.presentOKAlert(from: self, title: item.title, message: "Item was successfully added to the shopping cart.")
+let curItem = MenuItem(title: item.title, type: item.type, price: item.price, orderSize: "na", notes : specialInstructions.text)
+
+        curItem.addToShoppingCart()
+UIAlertController.presentGoodAlert(from: self, title: item.title, message: "Item was successfully added to the shopping cart.")
         
     }
 
@@ -56,7 +63,7 @@ class DetailViewController: UIViewController {
 
 extension UIAlertController {
     
-    static func presentOKAlert(from vc: UIViewController, title: String, message: String, okHandler: (()->Void)? = nil) {
+    static func presentGoodAlert(from vc: UIViewController, title: String, message: String, okHandler: (()->Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
             okHandler?()
@@ -67,7 +74,7 @@ extension UIAlertController {
 }
 
 extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFromD(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -81,7 +88,7 @@ extension UIImageView {
             }
             }.resume()
     }
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFromD(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }

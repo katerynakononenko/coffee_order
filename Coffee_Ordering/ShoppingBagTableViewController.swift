@@ -19,17 +19,26 @@ class ShoppingBagTableViewController: UITableViewController {
     var orderRef: CollectionReference!
     var subtotal: Float = 0.0
     var curOrder : [MenuItem] = []
+    var orderName: String = "Unknown"
+    
 
     @IBAction func checkOutBtn(_ sender: Any) {
         
         let timestamp = Date().timeIntervalSince1970
+        
+        
         for item in menuItems{
             item.orderTimestamp = timestamp
             item.addToCurrentOrder()
+            item.delete()
+           
         }
         
          UIAlertController.presentOKAlert(from: self, title: "Thank you :)", message: "Your order was sent over!")
+
         menuItems.removeAll()
+        
+        
         tableView.reloadData()
         
     }
@@ -89,7 +98,7 @@ class ShoppingBagTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       if indexPath.row == menuItems.count {
+      if indexPath.row == menuItems.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCartTableViewCell", for: indexPath) as! TotalCartTableViewCell
         subtotal = 0
         for it in menuItems {
@@ -104,7 +113,11 @@ class ShoppingBagTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckOutTableViewCell", for: indexPath) as! CheckOutTableViewCell
         
             return cell
-       }else {
+      } else if indexPath.row == menuItems.count + 2 {
+        // will have to change
+        let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as! nameTableViewCell
+        return cell
+      }else {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuItemTableViewCell
          let item = menuItems[indexPath.row]
          cell.name.text = item.title

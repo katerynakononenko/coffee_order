@@ -15,6 +15,7 @@ class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelega
     var listenerRegistration : ListenerRegistration?
     override func viewDidLoad() {
         super.viewDidLoad()
+   
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MenuItemCell")
         let query = Firestore.firestore().collection("menuItems")
         listenerRegistration = query.addSnapshotListener { (snapshot: QuerySnapshot?, error: Error?) in
@@ -93,10 +94,13 @@ class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelega
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuItemTableViewCell
+        
+        
         let item = firebaseMenu[indexPath.section].menuItems[indexPath.row]
         cell.name?.text = item.title
         let str_price = item.price?.description
         cell.price?.text = str_price
+        cell.contentView.backgroundColor = UIColor(red: 251, green: 247, blue: 234, alpha: 1)
         return cell
     }
     
@@ -116,6 +120,7 @@ class MenuTableViewController: UITableViewController, ExpandableHeaderViewDelega
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ExpandableHeaderView()
+        header.backgroundColor = UIColor(red: 227, green: 210, blue: 180, alpha: 1)
         let foodArray = firebaseMenu[section]
         let sectionName = foodArray.menuItems[0].type
         header.myInit(title: sectionName!, section: section, delegate: self)

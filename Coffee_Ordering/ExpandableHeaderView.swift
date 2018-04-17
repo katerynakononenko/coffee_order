@@ -27,6 +27,7 @@ class ExpandableHeaderView: UITableViewHeaderFooterView {
     
     func selectHeaderAction(gestureRecognizer: UITapGestureRecognizer){
         let cell = gestureRecognizer.view as! ExpandableHeaderView
+        
         delegate?.touchSection(header: self, section: cell.section)
     }
     
@@ -34,6 +35,8 @@ class ExpandableHeaderView: UITableViewHeaderFooterView {
         self.textLabel?.text = title
         self.section = section
         self.delegate = delegate
+       
+
     }
     
  

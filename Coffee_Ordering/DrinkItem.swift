@@ -42,6 +42,10 @@ class DrinkItem {
         return Firestore.firestore().collection("shoppingCart")
     }
     
+    static var altSizeRef : CollectionReference {
+        return Firestore.firestore().collection("alternativeSizes")
+    }
+    
     
     func addToCurrentOrder() {
         DrinkItem.curOrderCartReference.addDocument(data: json)
